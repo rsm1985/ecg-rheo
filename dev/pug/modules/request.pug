@@ -1,0 +1,65 @@
+-
+    var callback = [
+    {
+    type: 'text',
+    size: '6of12',
+    name: 'name',
+    mod: '_mod1 required',
+    placeholder: 'Ваше имя'
+    },
+    {
+    type: 'text',
+    size: '6of12',
+    name: 'name2',
+    mod: '_mod2 userphone required',
+    placeholder: 'Ваш телефон'
+    },
+    {
+    type: 'text',
+    size: '6of12',
+    name: 'address',
+    mod: '_mod2',
+    placeholder: 'Адрес'
+    },
+    {
+    type: 'text',
+    size: '6of12',
+    name: 'quant',
+    mod: 'js-number-only',
+    placeholder: 'Количество'
+    },
+    {
+    type: 'text',
+    textarea: true,
+    size: '12of12',
+    name: 'email',
+    mod: 'required',
+    placeholder: 'Сообщение'
+    },
+    {
+    type: 'checkbox',
+    size: '6of12',
+    name: 'agree',
+    mod: 'required',
+    placeholder: 'Вы даете свое согласие с <a href=# class=checkbox__link><b>политикой конфиденциальности</b></a>'
+    }
+
+
+
+
+    ],
+    button = {
+    mod: '_red',
+    text: 'Отправить'
+    }
+    ;
+
++b.request
+    .container
+        +b.cross-btn._popup.js-close-popup
+        +e.title Напишите нам
+        +b('form').form
+            +e.elements
+                each item in callback
+                    +input(item)
+            +button(button) Отправить

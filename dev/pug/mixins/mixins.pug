@@ -1,0 +1,19 @@
+mixin input(obj)
+    +b.input(class= "_" + obj.size)
+        if (obj.type === 'text')
+            +e(obj.textarea ? 'textarea' : 'input')(class=obj.type + (obj.mod ? (' ' + obj.mod) : ' '), name=obj.name, autocomplete=obj.autocomplete ? 'off' : 'no')
+            +e.bar
+            +e.label= obj.placeholder + (obj.required ? ' *' : '')
+        if (obj.type === 'select')
+            +b('select')(class='select' + (obj.mod ? obj.mod : ' ') + ' js-select')
+                each item in obj.placeholder
+                    +e('option')(value=item.value)=item.title
+        if (obj.type === 'checkbox')
+            +b('input').checkbox(class='' + (obj.mod ? (' ' + obj.mod) : ' '), type='checkbox', name=obj.name)
+            +e.checkbox
+            +e.label !{obj.placeholder}
+
+
+mixin button(obj)
+    +b('button').btn(class=btn + obj.mod ? obj.mod : '')=obj.text
+

@@ -1,0 +1,18 @@
+-
+    var menu = [
+    {
+        title: 'О нас',
+        link: 'sample'
+    }
+    ];
++b.menu-icon(href='#')
+    span.line.line-1
+    span.line.line-2
+    span.line.line-3
+.container
+    +b.menu.js-header
+        +e.logo
+        +b.NAV.nav._top
+            each item in menu
+                +e.link.js-scroll-to-element(href='#' data-link=item.link)=item.title
+        +b.call.js-call-popup(data-popup='{"target":"callback"}') Заказать звонок

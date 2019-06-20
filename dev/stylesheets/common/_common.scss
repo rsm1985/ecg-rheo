@@ -1,0 +1,28 @@
+body {
+    font-family: $main-font, sans-serif;
+    font-size: 16px;
+}
+.wrapper {
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+}
+.container {
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 0 20px;
+    max-width: 1780px;
+    width: 100%;
+}
+p {
+    margin-bottom: 50px;
+}
+.pseudo-hidden {
+    position: absolute;
+    left: -200vw;
+    opacity: 0;
+    z-index: -999;
+    pointer-events: none;
+    overflow: hidden;
+    transform: scale(0);
+}

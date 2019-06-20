@@ -1,0 +1,11 @@
++b.sample
+    +e('h1').title Фазы сердечного цикла,<br>диагноз и рекомендации
+    .container
+        +b.ecg
+            +e.graph
+                include ../../images/svg/ecg-rheo.svg
+
+        +b.table
+            +e('input').ecg.js-ecg-range
+            +e.heart
+                include ../../images/svg/heart.svg

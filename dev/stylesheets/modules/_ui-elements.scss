@@ -1,0 +1,27 @@
+.ui-selectmenu-button {
+    position: relative;
+    //background-image: none;
+    &:after {
+        content: "\e900";
+        position: absolute;
+        top: 7px;
+        right: 10px;
+        font-size: 14px;
+        font-family: $ico-font;
+    }
+}
+.ui-button .ui-icon {
+    background-image: none;
+}
+.ui-state-hover .ui-icon,
+.ui-state-focus .ui-icon,
+.ui-button:hover .ui-icon,
+.ui-button:focus .ui-icon {
+    //background-image: none;
+}
+.ui-selectmenu-icon.ui-icon.ui-icon-triangle-1-s {
+    background-image: none;
+}
+.ui-slider .ui-slider-handle {
+    z-index: 1;
+}

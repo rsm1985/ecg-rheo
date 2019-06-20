@@ -1,0 +1,165 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    &__elements {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 0 auto;
+        padding: 0 10px;
+        max-width: 310px;
+    }
+
+}
+
+.checkbox {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    border: 1px solid orange;
+    &__link {
+        pointer-events: all;
+    }
+
+}
+
+.input {
+    position: relative;
+    margin-bottom: 33px;
+    &_12of12 {
+        width: 100%;
+    }
+    &_11of12 {
+        width: calc((100% / 12 * 11) - 10px);
+    }
+    &_10of12 {
+        width: calc((100% / 12 * 10) - 10px);
+    }
+    &_9of12 {
+        width: calc((100% / 12 * 9) - 10px);
+    }
+    &_8of12 {
+        width: calc((100% / 12 * 8) - 10px);
+    }
+    &_7of12 {
+        width: calc((100% / 12 * 7) - 10px);
+    }
+    &_6of12 {
+        width: calc((100% / 12 * 6) - 10px);
+    }
+    &_5of12 {
+        width: calc((100% / 12 * 5) - 10px);
+    }
+    &_4of12 {
+        width: calc((100% / 12 * 4) - 10px);
+    }
+    &_3of12 {
+        width: calc((100% / 12 * 3) - 10px);
+    }
+    &_2of12 {
+        width: calc((100% / 12 * 2) - 10px);
+    }
+    &_1of12 {
+        width: calc((100% / 12) - 10px);
+    }
+
+    &__text {
+        width: 100%;
+        resize: none;
+        padding: 15px 20px;
+        font-size: 16px;
+        &_datepicker {
+            border: 1px solid grey;
+        }
+    }
+    &__label {
+        position: absolute;
+        z-index: 2;
+        top: 16px;
+        left: 20px;
+        width: 100%;
+        transition: $transition;
+        //text-align: center;
+    }
+    &__bar {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background-color: forestgreen;
+        width: 0;
+        height: 2px;
+        transition: $transition;
+    }
+
+    &__text:focus ~ &__label,
+    &__text._active ~ &__label,
+    &__text.valid ~ &__label,
+    &__text.error ~ &__label {
+        top: -20px;
+        font-size: 13px;
+        transition: $transition;
+    }
+    &__text:focus ~ &__bar,
+    &__text._active ~ &__bar,
+    &__text.valid ~ &__bar,
+    &__text.error ~ &__bar {
+        width: 100%;
+        transition: $transition;
+    }
+    &__text.error ~ &__bar {
+        background-color: red;
+        transition: $transition;
+    }
+
+    .checkbox {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        -webkit-appearance: none;
+        height: 100%;
+        border: 1px solid rgba(0, 0, 0, .3);
+        outline: none;
+    }
+    .checkbox ~ &__checkbox {
+        position: relative;
+        width: 20px;
+        height: 20px;
+        border: 1px solid blue;
+    }
+    .checkbox:checked ~ &__checkbox:after {
+        position: absolute;
+        content: 'V';
+        top: 0;
+        left: 0;
+        display: block;
+        width: 9px;
+        height: 14px;
+    }
+
+}
+
+
+
+
+
+.btn {
+    padding: 20px;
+    border-radius: 50px;
+    border: 2px solid $white;
+    background-color: #0c8018;
+    text-transform: uppercase;
+    font-size: 16px;
+    color: $white;
+    transition: $transition;
+    cursor: pointer;
+    &:hover {
+        background-color: #42bb3f;
+        transition: $transition;
+    }
+}

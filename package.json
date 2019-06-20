@@ -1,0 +1,55 @@
+{
+  "name": "Derinat",
+  "version": "0.0.0",
+  "description": "",
+  "main": "./assets/js/bundle.js",
+  "repository": {
+    "type": "git",
+    "url": "#"
+  },
+  "scripts": {
+    "start": "gulp"
+  },
+  "keywords": [],
+  "author": "Tutmee",
+  "license": "ISC",
+  "browserify": {
+    "transform": "browserify-shim"
+  },
+  "browser": {
+    "jquery": "./dev/js/lib/jquery-2.1.4.min.js"
+  },
+  "browserify-shim": {
+    "jquery": "$"
+  },
+  "dependencies": {
+    "object-fit": "^0.4.3",
+    "object-fit-polyfill": "^0.1.0",
+    "object-fit-images": "^3.2.1"
+  },
+  "devDependencies": {
+    "bemto.pug": "^2.1.0",
+    "bowser": "^2.0.0-beta.1",
+    "browserify": "^14.0.0",
+    "browserify-shim": "^3.8.12",
+    "es6-symbol": "^3.1.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^2.0.0",
+    "gulp-connect": "^5.0.0",
+    "gulp-jsbeautifier": "^2.0.3",
+    "gulp-jshint": "~1.9.0",
+    "gulp-jslint": "^1.0.9",
+    "gulp-plumber": "^1.1.0",
+    "gulp-pug": "^3.2.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^1.9.1",
+    "gulp-svgmin": "^1.2.3",
+    "gulp-uglify": "^2.1.2",
+    "jshint-stylish": "^1.0.0",
+    "npmignore": "^0.2.0",
+    "objectFitPolyfill": "^2.0.3",
+    "systemjs": "^0.20.5",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}

@@ -1,0 +1,29 @@
+-
+    var slider = [
+    {
+        title: 'Слайд 1',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        img: 'sample1'
+    },
+    {
+        title: 'Слайд 2',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' ,
+        img: 'sample2'
+    },
+    {
+    title: 'Слайд 3',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' ,
+    img: 'sample2'
+    }
+    ];
++b.SECTION.banner
+    +b.slider._banner.js-slider-banner
+        //+b.slider-btn._prev
+        //+b.slider-btn._next
+        each item in slider
+            +e.item(src="images/" + item.img + ".jpg")
+            //+b.slider-banner-item(style='background: url("images/' + item.img +'.jpg") center center no-repeat; background-size: cover;')
+            //    +e.content
+            //        .container
+            //            +e.title=item.title
+            //            +e.text=item.text

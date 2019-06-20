@@ -1,0 +1,68 @@
+-
+    var callback = [
+    {
+        type: 'text',
+
+        size: '6of12',
+        name: 'name',
+        mod: '_mod1 required',
+        placeholder: 'Ваше имя'
+    },
+    {
+        type: 'text',
+        size: '6of12',
+        name: 'name2',
+        mod: '_mod2 userphone required',
+        placeholder: 'Ваш телефон'
+    },
+    {
+    type: 'text',
+    size: '6of12',
+    name: 'address',
+    mod: '_mod2',
+    placeholder: 'Адрес'
+    },
+    {
+    type: 'text',
+    size: '6of12',
+    name: 'quant',
+    mod: 'js-number-only',
+    placeholder: 'Количество'
+    },
+    {
+    type: 'text',
+    textarea: true,
+    size: '12of12',
+    name: 'email',
+    mod: 'required',
+    placeholder: 'Сообщение'
+    }
+
+
+
+    ],
+    button = {
+        mod: '_red',
+        text: 'Отправить'
+    }
+    ;
+
+.overlay.js-overlay
+
++b.popup-style.js-popup.js-popup-callback
+    +e.content
+        +b.cross-btn._popup.js-close-popup
+        +e.title Напишите нам
+        +b('form').form
+            +e.elements
+                each item in callback
+                    +input(item)
+            +button(button) Отправить
+
++b.popup-style._thx.js-popup.js-popup-thx
+    +e.content
+        +b.cross-btn._popup.js-close-popup
+        +e.content-item
+            +e.H3.title Ваша заявка отправлена
+            +e.P.subtitle Наши менеджеры свяжутся с вами в ближайшее время.
+

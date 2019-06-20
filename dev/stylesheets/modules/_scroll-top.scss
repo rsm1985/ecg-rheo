@@ -1,0 +1,30 @@
+.scroll-top {
+    position: fixed;
+    bottom: 10%;
+    right: 10%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-15px);
+    transition: $transition;
+    &__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        background-color: #42bb3f;
+        border-radius: 50%;
+    }
+    &__icon {
+        color: $white;
+    }
+    &.show {
+        opacity: 1;
+        pointer-events: all;
+        transform: translateY(0);
+        transition: $transition;
+    }
+}
