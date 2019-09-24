@@ -8,11 +8,11 @@ body {
     overflow: hidden;
 }
 .container {
-    overflow: hidden;
     margin: 0 auto;
     padding: 0 20px;
-    max-width: 1780px;
+    max-width: 1240px;
     width: 100%;
+    overflow: hidden;
 }
 p {
     margin-bottom: 50px;
@@ -26,3 +26,18 @@ p {
     overflow: hidden;
     transform: scale(0);
 }
+.irs-single {
+    background-color: #E31E24 !important;
+    font-weight: 700;
+    &:before {
+        border-top-color: #E31E24 !important;
+    }
+}
+.irs-handle.single {
+    border-color: #E31E24 !important;
+}
+.irs--round .irs-bar {
+    background-color: #E31E24 !important
+}
+
+
