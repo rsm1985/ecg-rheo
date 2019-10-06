@@ -12,7 +12,7 @@
 }
 .ecg {
   position: relative;
-  width: 48%;
+  width: 51%;
   border: 1px solid red;
   &__graph {
 
@@ -21,4 +21,15 @@
 .table {
   width: 48%;
   border: 1px solid red;
+}
+.phases {
+  display: flex;
+  margin-top: 20px;
+  &__heart {
+    width: 250px;
+  }
+  &__list {
+    flex-grow: 1;
+    margin-left: 15px;
+  }
 }

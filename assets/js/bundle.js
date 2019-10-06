@@ -2857,6 +2857,8 @@ var $_ = {
         this.$html = $('html, body');
         this.$slider = $('.js-slider-banner');
         this.$scrollToTop = $('.js-scroll-to-top');
+        this.$activePhase = $('.js-active-phase');
+        this.$diagnosis = $('.js-diagnosis');
 
         this.$svg = $('.js-ecg-range');
 
@@ -2920,62 +2922,87 @@ var $_ = {
     switchOnPhase: function() {
 
     },
-    turnOnPhases: function(ecg, phase) {
-        var phases = ['#ps-pf', '#pf-q', '#q-r', '#r-s', '#s-l', '#l-j', '#j-ts', '#ts-tf', '#tf-us', '#us-uf', '#uf-ps'];
-        for( var i = 0; i < 11; i++) {
-            ecg.select(phases[i]).attr("opacity", "0");
-            if(i === phase) {
-                ecg.select(phases[i]).attr("opacity", "1");
-            }
-        }
+    turnOnPhases: function(ecg, phase, current) {
+        var phases = ['#ps-pf', '#pf-q', '#q-r', '#r-s', '#s-l', '#l-j', '#j-ts', '#ts-tf', '#tf-ps'];
+        var diagnosis = [
+            '<tr><td>Выявляемые физиологические, функциональные, метаболические и другие изменения</td><td>ЭКГ признаки</td><td>Возможные последствия</td><td>Рекомендации</td></tr><tr><td>Признаки эндокардита</td><td>Изменение амплитуды фазы P-Q при ортопробе</td><td>Снижение двигательной активности</td><td>Настойка «Юглон», «9-ка СТОПразит», «Нуксен 2» (черный орех). Продолжительность приема - 2 курса  </td></tr>',
+            '<tr><td>Выявляемые физиологические, функциональные, метаболические и другие изменения</td><td>ЭКГ признаки</td><td>Возможные последствия</td><td>Рекомендации</td></tr><tr><td>Признаки 2</td><td>Изменение 2</td><td></td><td>Рекомендации 2</td></tr>',
+            '<tr><td>Выявляемые физиологические, функциональные, метаболические и другие изменения</td><td>ЭКГ признаки</td><td>Возможные последствия</td><td>Рекомендации</td></tr><tr><td>Признаки 3</td><td>Изменение 3</td><td></td><td>Рекомендации 3</td></tr>',
+            '<tr><td>Выявляемые физиологические, функциональные, метаболические и другие изменения</td><td>ЭКГ признаки</td><td>Возможные последствия</td><td>Рекомендации</td></tr><tr><td>Признаки 4</td><td>Изменение 4</td><td></td><td>Рекомендации 4</td></tr>',
+            '<tr><td>Выявляемые физиологические, функциональные, метаболические и другие изменения</td><td>ЭКГ признаки</td><td>Возможные последствия</td><td>Рекомендации</td></tr><tr><td>Признаки 5</td><td>Изменение 5</td><td></td><td>Рекомендации 5</td></tr>',
+            '<tr><td>Выявляемые физиологические, функциональные, метаболические и другие изменения</td><td>ЭКГ признаки</td><td>Возможные последствия</td><td>Рекомендации</td></tr><tr><td>Признаки 6</td><td>Изменение 6</td><td></td><td>Рекомендации 6</td></tr>',
+            '<tr><td>Выявляемые физиологические, функциональные, метаболические и другие изменения</td><td>ЭКГ признаки</td><td>Возможные последствия</td><td>Рекомендации</td></tr><tr><td>Признаки 7</td><td>Изменение 7</td><td></td><td>Рекомендации 7</td></tr>',
+            '<tr><td>Выявляемые физиологические, функциональные, метаболические и другие изменения</td><td>ЭКГ признаки</td><td>Возможные последствия</td><td>Рекомендации</td></tr><tr><td>Признаки 8</td><td>Изменение 8</td><td></td><td>Рекомендации 8</td></tr>',
+            '<tr><td>Выявляемые физиологические, функциональные, метаболические и другие изменения</td><td>ЭКГ признаки</td><td>Возможные последствия</td><td>Рекомендации</td></tr><tr><td>Признаки 9</td><td>Изменение 9</td><td></td><td>Рекомендации 9</td></tr>',
+            '<tr><td>Выявляемые физиологические, функциональные, метаболические и другие изменения</td><td>ЭКГ признаки</td><td>Возможные последствия</td><td>Рекомендации</td></tr><tr><td>Признаки 10</td><td>Изменение 10</td><td></td><td>Рекомендации 10</td></tr>',
+        ]
 
+        for( var i = 0; i < 10; i++) {
+            ecg.select(phases[i]).attr("opacity", "0");
+            $_.$activePhase.find('div:nth-child('+ (i+1) +')').css('color','black')
+            if(i === phase) {
+                $_.$activePhase.find('div:nth-child('+ (i+1) +')').css('color','red');
+                $_.$diagnosis.html(diagnosis[i]);
+                ecg.select(phases[i]).attr("opacity", "1");
+
+            }
+            if(current > 21 && current < 33) {
+                // console.log(i+2)
+                $_.$diagnosis.html(diagnosis[i+1]);
+                $_.$activePhase.find('div:nth-child(9)').css('color','black')
+                $_.$activePhase.find('div:nth-child(10)').css('color','red')
+            }
+
+
+        }
+        // console.log(current)
 
 
     },
     togglePhases: function (ecg, data) {
         switch(data.from_value) {
             case 'Pн-Pк': {
-                $_.turnOnPhases(ecg, 0);
+                $_.turnOnPhases(ecg, 0, data.from);
                 break;
             }
             case 'Pк-Q': {
-                $_.turnOnPhases(ecg, 1);
+                $_.turnOnPhases(ecg, 1, data.from);
                 break;
             }
             case 'Q-R': {
-                $_.turnOnPhases(ecg, 2);
+                $_.turnOnPhases(ecg, 2, data.from);
                 break;
             }
             case 'R-S': {
-                $_.turnOnPhases(ecg, 3);
+                $_.turnOnPhases(ecg, 3, data.from);
                 break;
             }
             case 'S-L': {
-                $_.turnOnPhases(ecg, 4);
+                $_.turnOnPhases(ecg, 4, data.from);
                 break;
             }
             case 'L-j': {
-                $_.turnOnPhases(ecg, 5);
+                $_.turnOnPhases(ecg, 5, data.from);
                 break;
             }
             case 'j-Tн': {
-                $_.turnOnPhases(ecg, 6);
+                $_.turnOnPhases(ecg, 6, data.from);
                 break;
             }
             case 'Тн-Тк': {
-                $_.turnOnPhases(ecg, 7);
+                $_.turnOnPhases(ecg, 7, data.from);
                 break;
             }
             case 'Тк-Uн': {
-                $_.turnOnPhases(ecg, 8);
+                $_.turnOnPhases(ecg, 8, data.from);
                 break;
             }
             case 'Uн-Uк': {
-                $_.turnOnPhases(ecg, 9);
+                $_.turnOnPhases(ecg, 8, data.from);
                 break;
             }
             case 'Uк-Pн': {
-                $_.turnOnPhases(ecg, 10);
+                $_.turnOnPhases(ecg, 8, data.from);
                 break;
             }
             default: break;
@@ -3013,8 +3040,8 @@ var $_ = {
             min: 0,
             max: 32,
             hide_min_max: true,
-            onStart: function () {
-                $_.turnOnPhases(ecg, 0);
+            onStart: function (data) {
+                $_.turnOnPhases(ecg, 0, data.from);
             },
 
             onChange: function (data) {
