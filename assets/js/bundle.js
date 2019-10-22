@@ -457,6 +457,7 @@ require('./plugin/animatescroll.min');
 require('./popups.js');
 require('./forms.js');
 require('./script.js');
+
 },{"./forms.js":1,"./plugin/animatescroll.min":4,"./plugin/ion.rangeSlider.min":5,"./plugin/jquery.inputmask.bundle.min":6,"./plugin/jquery.validate.min":7,"./plugin/svg":8,"./popups.js":9,"./script.js":10,"jquery":2}],4:[function(require,module,exports){
 /* Coded by Ramswaroop */
 (function(e){e.easing["jswing"]=e.easing["swing"];e.extend(e.easing,{def:"easeOutQuad",swing:function(t,n,r,i,s){return e.easing[e.easing.def](t,n,r,i,s)},easeInQuad:function(e,t,n,r,i){return r*(t/=i)*t+n},easeOutQuad:function(e,t,n,r,i){return-r*(t/=i)*(t-2)+n},easeInOutQuad:function(e,t,n,r,i){if((t/=i/2)<1)return r/2*t*t+n;return-r/2*(--t*(t-2)-1)+n},easeInCubic:function(e,t,n,r,i){return r*(t/=i)*t*t+n},easeOutCubic:function(e,t,n,r,i){return r*((t=t/i-1)*t*t+1)+n},easeInOutCubic:function(e,t,n,r,i){if((t/=i/2)<1)return r/2*t*t*t+n;return r/2*((t-=2)*t*t+2)+n},easeInQuart:function(e,t,n,r,i){return r*(t/=i)*t*t*t+n},easeOutQuart:function(e,t,n,r,i){return-r*((t=t/i-1)*t*t*t-1)+n},easeInOutQuart:function(e,t,n,r,i){if((t/=i/2)<1)return r/2*t*t*t*t+n;return-r/2*((t-=2)*t*t*t-2)+n},easeInQuint:function(e,t,n,r,i){return r*(t/=i)*t*t*t*t+n},easeOutQuint:function(e,t,n,r,i){return r*((t=t/i-1)*t*t*t*t+1)+n},easeInOutQuint:function(e,t,n,r,i){if((t/=i/2)<1)return r/2*t*t*t*t*t+n;return r/2*((t-=2)*t*t*t*t+2)+n},easeInSine:function(e,t,n,r,i){return-r*Math.cos(t/i*(Math.PI/2))+r+n},easeOutSine:function(e,t,n,r,i){return r*Math.sin(t/i*(Math.PI/2))+n},easeInOutSine:function(e,t,n,r,i){return-r/2*(Math.cos(Math.PI*t/i)-1)+n},easeInExpo:function(e,t,n,r,i){return t==0?n:r*Math.pow(2,10*(t/i-1))+n},easeOutExpo:function(e,t,n,r,i){return t==i?n+r:r*(-Math.pow(2,-10*t/i)+1)+n},easeInOutExpo:function(e,t,n,r,i){if(t==0)return n;if(t==i)return n+r;if((t/=i/2)<1)return r/2*Math.pow(2,10*(t-1))+n;return r/2*(-Math.pow(2,-10*--t)+2)+n},easeInCirc:function(e,t,n,r,i){return-r*(Math.sqrt(1-(t/=i)*t)-1)+n},easeOutCirc:function(e,t,n,r,i){return r*Math.sqrt(1-(t=t/i-1)*t)+n},easeInOutCirc:function(e,t,n,r,i){if((t/=i/2)<1)return-r/2*(Math.sqrt(1-t*t)-1)+n;return r/2*(Math.sqrt(1-(t-=2)*t)+1)+n},easeInElastic:function(e,t,n,r,i){var s=1.70158;var o=0;var u=r;if(t==0)return n;if((t/=i)==1)return n+r;if(!o)o=i*.3;if(u<Math.abs(r)){u=r;var s=o/4}else var s=o/(2*Math.PI)*Math.asin(r/u);return-(u*Math.pow(2,10*(t-=1))*Math.sin((t*i-s)*2*Math.PI/o))+n},easeOutElastic:function(e,t,n,r,i){var s=1.70158;var o=0;var u=r;if(t==0)return n;if((t/=i)==1)return n+r;if(!o)o=i*.3;if(u<Math.abs(r)){u=r;var s=o/4}else var s=o/(2*Math.PI)*Math.asin(r/u);return u*Math.pow(2,-10*t)*Math.sin((t*i-s)*2*Math.PI/o)+r+n},easeInOutElastic:function(e,t,n,r,i){var s=1.70158;var o=0;var u=r;if(t==0)return n;if((t/=i/2)==2)return n+r;if(!o)o=i*.3*1.5;if(u<Math.abs(r)){u=r;var s=o/4}else var s=o/(2*Math.PI)*Math.asin(r/u);if(t<1)return-.5*u*Math.pow(2,10*(t-=1))*Math.sin((t*i-s)*2*Math.PI/o)+n;return u*Math.pow(2,-10*(t-=1))*Math.sin((t*i-s)*2*Math.PI/o)*.5+r+n},easeInBack:function(e,t,n,r,i,s){if(s==undefined)s=1.70158;return r*(t/=i)*t*((s+1)*t-s)+n},easeOutBack:function(e,t,n,r,i,s){if(s==undefined)s=1.70158;return r*((t=t/i-1)*t*((s+1)*t+s)+1)+n},easeInOutBack:function(e,t,n,r,i,s){if(s==undefined)s=1.70158;if((t/=i/2)<1)return r/2*t*t*(((s*=1.525)+1)*t-s)+n;return r/2*((t-=2)*t*(((s*=1.525)+1)*t+s)+2)+n},easeInBounce:function(t,n,r,i,s){return i-e.easing.easeOutBounce(t,s-n,0,i,s)+r},easeOutBounce:function(e,t,n,r,i){if((t/=i)<1/2.75){return r*7.5625*t*t+n}else if(t<2/2.75){return r*(7.5625*(t-=1.5/2.75)*t+.75)+n}else if(t<2.5/2.75){return r*(7.5625*(t-=2.25/2.75)*t+.9375)+n}else{return r*(7.5625*(t-=2.625/2.75)*t+.984375)+n}},easeInOutBounce:function(t,n,r,i,s){if(n<s/2)return e.easing.easeInBounce(t,n*2,0,i,s)*.5+r;return e.easing.easeOutBounce(t,n*2-s,0,i,s)*.5+i*.5+r}});e.fn.animatescroll=function(t){var n=e.extend({},e.fn.animatescroll.defaults,t);if(typeof n.onScrollStart=="function"){n.onScrollStart.call(this)}if(n.element=="html,body"){var r=this.offset().top;e(n.element).stop().animate({scrollTop:r-n.padding},n.scrollSpeed,n.easing)}else{e(n.element).stop().animate({scrollTop:this.offset().top-this.parent().offset().top+this.parent().scrollTop()-n.padding},n.scrollSpeed,n.easing)}setTimeout(function(){if(typeof n.onScrollEnd=="function"){n.onScrollEnd.call(this)}},n.scrollSpeed)};e.fn.animatescroll.defaults={easing:"swing",scrollSpeed:800,padding:0,element:"html,body"}})(jQuery)
@@ -2857,8 +2858,13 @@ var $_ = {
         this.$html = $('html, body');
         this.$slider = $('.js-slider-banner');
         this.$scrollToTop = $('.js-scroll-to-top');
-        this.$activePhase = $('.js-active-phase');
-        this.$diagnosis = $('.js-diagnosis');
+
+
+        this.$phaseTitle = $('.js-phase-title');
+        this.$deviations = $('.js-deviations');
+        this.$symptoms = $('.js-symptoms');
+        this.$aftermath = $('.js-aftermath');
+        this.$todo = $('.js-todo');
 
         this.$svg = $('.js-ecg-range');
 
@@ -2916,104 +2922,59 @@ var $_ = {
             } else {
                 $_.$scrollToTop.removeClass('show');
             }
-
         });
     },
-    switchOnPhase: function() {
-
-    },
-    turnOnPhases: function(ecg, phase, current) {
-        var phases = ['#ps-pf', '#pf-q', '#q-r', '#r-s', '#s-l', '#l-j', '#j-ts', '#ts-tf', '#tf-ps'];
-        var diagnosis = [
-            '<tr><td>Физиология фазы</td><td><ol><li>Закрытие ПЖК<br>Pн - начало закрытия, Q - полное закрытие </li><li>В точке Q давление достаточно для воздействия на АВ-узел, который начинает генерацию нервного импульса действия</li></ol></td></tr><tr><td>Выявляемые физиологические, функциональные, метаболические и другие изменения</td><td>Признаки эндокардита</td></tr><tr><td>ЭКГ признаки</td><td>Изменение амплитуды фазы P-Q при ортопробе</td></tr><tr><td>Возможные последствия</td><td>Снижение двигательной активности, возможные внезапные короткие головокружения</td></tr><tr><td>Рекомендации</td><td>Настойка «Юглон», «9-ка СТОПразит», «Нуксен 2» (черный орех). Продолжительность приема - 2 курса</td></tr>',
-            '<tr><td>Физиология фазы</td><td>Фаза 2</td></tr><tr><td>Выявляемые физиологические, функциональные, метаболические и другие изменения</td><td>Фаза 2</td></tr><tr><td>ЭКГ признаки</td><td>Фаза 2</td></tr><tr><td>Возможные последствия</td><td>Фаза 2</td></tr><tr><td>Рекомендации</td><td>Фаза 2</td></tr>',
-            // '<tr><td></td><td>ЭКГ признаки</td><td>Возможные последствия</td><td>Рекомендации</td></tr><tr><td></td><td></td><td>Снижение двигательной активности</td><td>Настойка «Юглон», «9-ка СТОПразит», «Нуксен 2» (черный орех). Продолжительность приема - 2 курса  </td></tr>',
-        ]
-
-        for( var i = 0; i < 10; i++) {
-            ecg.select(phases[i]).attr("opacity", "0");
-            $_.$activePhase.find('div:nth-child('+ (i+1) +')').css('color','black')
-            if(i === phase) {
-                $_.$activePhase.find('div:nth-child('+ (i+1) +')').css('color','red');
-                $_.$diagnosis.html(diagnosis[i]);
-                ecg.select(phases[i]).attr("opacity", "1");
-
-            }
-            if(current > 21 && current < 33) {
-                // console.log(i+2)
-                $_.$diagnosis.html(diagnosis[i+1]);
-                $_.$activePhase.find('div:nth-child(9)').css('color','black')
-                $_.$activePhase.find('div:nth-child(10)').css('color','red')
-            }
-
-
-        }
-        // console.log(current)
-
-
-    },
-    togglePhases: function (ecg, data) {
-        switch(data.from_value) {
-            case 'Pн-Pк': {
-                $_.turnOnPhases(ecg, 0, data.from);
-                break;
-            }
-            case 'Pк-Q': {
-                $_.turnOnPhases(ecg, 1, data.from);
-                break;
-            }
-            case 'Q-R': {
-                $_.turnOnPhases(ecg, 2, data.from);
-                break;
-            }
-            case 'R-S': {
-                $_.turnOnPhases(ecg, 3, data.from);
-                break;
-            }
-            case 'S-L': {
-                $_.turnOnPhases(ecg, 4, data.from);
-                break;
-            }
-            case 'L-j': {
-                $_.turnOnPhases(ecg, 5, data.from);
-                break;
-            }
-            case 'j-Tн': {
-                $_.turnOnPhases(ecg, 6, data.from);
-                break;
-            }
-            case 'Тн-Тк': {
-                $_.turnOnPhases(ecg, 7, data.from);
-                break;
-            }
-            case 'Тк-Uн': {
-                $_.turnOnPhases(ecg, 8, data.from);
-                break;
-            }
-            case 'Uн-Uк': {
-                $_.turnOnPhases(ecg, 8, data.from);
-                break;
-            }
-            case 'Uк-Pн': {
-                $_.turnOnPhases(ecg, 8, data.from);
-                break;
-            }
-            default: break;
-
-        }
-
+    changePhase: function(data) {
+        $_.$phaseTitle.html(data.title);
+        $_.$deviations.html(data.deviations);
+        $_.$symptoms.html(data.symptoms);
+        $_.$aftermath.html(data.aftermath);
+        $_.$todo.html(data.todo);
 
     },
     drawSvg: function () {
         var ecg = SVG("ecg-svg");
         // var heart = draw.select('.svg__heart');
-        var ecgStates = [
+        // var phases = [
+        //     'Систола предсердий',
+        //     'Закрытие предсердно-желудочковых клапанов',
+        //     'Сокращение межжелудочковой перегородки',
+        //     'Сокращение стенок желудочков',
+        //     'Напряжение мышц сердца',
+        //     'Открытие клпанов и быстрое изгнание крови',
+        //     'Медленное изгнание крови',
+        //     'Создание максимального систолического давления в аорте',
+        //     'Закрытие полулунных клапанов',
+        //     'Ранняя диастола желудочков'
+        // ];
+        var ecgPhases = [
             {
-                phase: "Pн-Pк",
-                path: ""
-            }
+                id: 0,
+                title: "Систола предсердий",
+                path: "",
+                deviations: "Признаки перикардита",
+                symptoms: "Увеличенная амплитуда Р волны. Возможно снижение амплитуды R зубца ниже изолинии при ортопробе",
+                aftermath: "Отдышка при нагрузке",
+                todo: "Настойка «Юглон», «9-ка СТОПразит», «Нуксен 2» (чёрный орех), пить два курса",
+                showAV: false,
+                showNode2: false,
+                showNode3: false
+            },
+            {
+                id: 1,
+                title: "Систола предсердий",
+                path: "",
+                deviations: "Признаки эндокардита",
+                symptoms: "Изменение амплитуды Р-Q фазы при ортопробе",
+                aftermath: "Снижение двигательной активности, возможные внезапные короткие головокружения",
+                todo: "1.Комплексное лечение направленное на нормализацию кислотно – щелочного баланса организма. 2.Сбалансированное питание. 3.Волновая – резонансная терапия прибором «ЭЖ-2». 4.Регулярные физические занятия.",
+                showAV: false,
+                showNode2: false,
+                showNode3: false
+            },
 
         ];
+
         $_.$svg.ionRangeSlider({
             skin: "round",
             values: [
@@ -3034,21 +2995,19 @@ var $_ = {
             max: 32,
             hide_min_max: true,
             onStart: function (data) {
-                $_.turnOnPhases(ecg, 0, data.from);
+                // $_.turnOnPhases(ecg, 0, data.from);
+                $_.$phaseTitle.innerHTML = 111;
             },
 
             onChange: function (data) {
-                // console.log(data.from);
+                $_.changePhase(ecgPhases[data.from]);
                 ecg.select('.js-green-line').animate(40, '>', 0).attr({
-                    "x1": data.from * 590 + 755,
-                    "x2": data.from * 590 + 755
+                    "x1": data.from * 590 + 757,
+                    "x2": data.from * 590 + 757
                 });
-
-                // console.log(data.from_value);
-                //data.from = 1;
                 //draw.select('#pq-lines line').attr("stroke", "#000").attr("opacity", "1");
                 //heart.animate(100, '>', 0).plot(heartStates[data.from])
-                $_.togglePhases(ecg, data);
+                // $_.togglePhases(ecg, data);
 
 
 

@@ -12,15 +12,39 @@
 }
 .ecg {
   position: relative;
-  width: 51%;
+  width: 40%;
   border: 1px solid red;
+  &__range-wrapper {
+    padding-left: 8px;
+  }
   &__graph {
 
   }
 }
 .table {
-  width: 48%;
+  width: 59%;
   border: 1px solid red;
+  &__diagnosis {
+    width: 100%;
+    border: 1px solid black;
+    & td {
+      padding: 5px;
+      border: 1px solid black;
+    }
+    & tbody tr td:first-child {
+      width: 300px;
+    }
+  }
+  &__cell {
+    vertical-align: top;
+  }
+  &__phase-item {
+    margin-top: 20px;
+  }
+  &__phase-title {
+
+    font-size: 30px;
+  }
 }
 .phases {
   display: flex;
@@ -31,16 +55,5 @@
   &__list {
     flex-grow: 1;
     margin-left: 15px;
-  }
-}
-.diagnosis {
-  width: 100%;
-  border: 1px solid black;
-  & td {
-    padding: 5px;
-    border: 1px solid black;
-  }
-  & tbody tr td:first-child {
-    width: 300px;
   }
 }

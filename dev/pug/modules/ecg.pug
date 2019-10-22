@@ -1,31 +1,32 @@
--
-    var phases = [
-    'Систола предсердий',
-    'Закрытие предсердно-желудочковых клапанов',
-    'Сокращение межжелудочковой перегородки',
-    'Сокращение стенок желудочков',
-    'Напряжение мышц сердца',
-    'Открытие клпанов и быстрое изгнание крови',
-    'Медленное изгнание крови',
-    'Создание максимального систолического давления в аорте',
-    'Закрытие полулунных клапанов',
-    'Ранняя диастола желудочков'
-    ];
 +b.sample
     +e('h1').title Фазы сердечного цикла,<br>диагноз и рекомендации
     .container
         +b.ecg
+            +e.range-wrapper
+                +e('input').range.js-ecg-range
             +e.graph
                 include ../../images/svg/ecg-rheo.svg
 
         +b.table
-            +e('input').ecg.js-ecg-range
-            +b.phases
-                +e.heart
-                    include ../../images/svg/heart.svg
-                +e.list.js-active-phase
-                    each phase in phases
-                        +e.list-item=phase
-            +b('table').diagnosis.js-diagnosis
+            +e('table').diagnosis.js-diagnosis
+                +e('tr').row
+                    +e('td').cell
+                        +e.phase
+                            +e.phase-item Фаза цикла
+                            +e('h3').phase-title.js-phase-title Систола предсердий
 
+                    +e('td').cell
+                        include ../../images/svg/heart.svg
+                +e('tr').row
+                    +e('td').cell Выявляемые физиологические, функциональные, метаболические и другие изменения
+                    +e('td').cell.js-deviations Признаки эндокардита
+                +e('tr').row
+                    +e('td').cell ЭКГ признаки
+                    +e('td').cell.js-symptoms Изменение амплитуды Р-Q фазы при ортопробе
+                +e('tr').row
+                    +e('td').cell Возможные последствия
+                    +e('td').cell.js-aftermath Снижение двигательной активности, возможные внезапные короткие головокружения
+                +e('tr').row
+                    +e('td').cell Рекомендации
+                    +e('td').cell.js-todo Настойка «Юглон», «9-ка СТОПразит», «Нуксен 2» (чёрный орех), пить два курса
 
