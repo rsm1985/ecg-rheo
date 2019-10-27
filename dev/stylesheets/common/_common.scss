@@ -14,9 +14,7 @@ body {
     width: 100%;
     overflow: hidden;
 }
-p {
-    margin-bottom: 50px;
-}
+
 .pseudo-hidden {
     position: absolute;
     left: -200vw;
@@ -35,9 +33,19 @@ p {
 }
 .irs-handle.single {
     border-color: #E31E24 !important;
+    animation: circle  2s infinite ease-in-out;
+    animation-direction: alternate;
+    cursor: pointer;
 }
 .irs--round .irs-bar {
     background-color: #E31E24 !important
 }
 
-
+@keyframes circle {
+    from {
+        background-color: #fff;
+    }
+    to {
+        background-color: yellow;
+    }
+}

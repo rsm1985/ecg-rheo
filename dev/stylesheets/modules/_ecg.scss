@@ -12,48 +12,53 @@
 }
 .ecg {
   position: relative;
-  width: 40%;
-  border: 1px solid red;
-  &__range-wrapper {
-    padding-left: 8px;
-  }
-  &__graph {
-
-  }
+  width: 30%;
 }
 .table {
-  width: 59%;
-  border: 1px solid red;
+  width: 69%;
   &__diagnosis {
+    margin-top: 20px;
     width: 100%;
     border: 1px solid black;
+
     & td {
       padding: 5px;
       border: 1px solid black;
     }
     & tbody tr td:first-child {
-      width: 300px;
+      width: 200px;
+      vertical-align: top;
+    }
+    & tbody tr td:nth-child(n+1) {
+      width: 30%;
+    }
+    & tbody tr:hover td {
+      background-color: gold;
+    }
+    &_header {
+      border: none !important;
     }
   }
-  &__cell {
-    vertical-align: top;
+}
+.head {
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #ccc;
+}
+.phase {
+  display: flex;
+  margin-top: 20px;
+  &__content {
+    width: 300px;
+  }
+  &__heart {
+    max-height: 200px;
   }
   &__phase-item {
     margin-top: 20px;
   }
   &__phase-title {
 
-    font-size: 30px;
-  }
-}
-.phases {
-  display: flex;
-  margin-top: 20px;
-  &__heart {
-    width: 250px;
-  }
-  &__list {
-    flex-grow: 1;
-    margin-left: 15px;
+    font-size: 25px;
   }
 }
