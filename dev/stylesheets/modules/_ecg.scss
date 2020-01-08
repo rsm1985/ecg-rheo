@@ -15,8 +15,11 @@
   width: 30%;
 }
 .table {
+  margin-bottom: 30px;
   width: 69%;
-
+  &_wide {
+    width: 100%;
+  }
   &__diagnosis {
     margin-top: 20px;
     width: 100%;
@@ -51,7 +54,7 @@
     width: 300px;
   }
   &__heart {
-    max-height: 200px;
+    max-height: 400px;
   }
   &__phase-item {
     margin-top: 20px;
