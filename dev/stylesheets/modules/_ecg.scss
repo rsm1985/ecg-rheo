@@ -48,13 +48,13 @@
   background-color: #ccc;
 }
 .phase {
-  display: flex;
   margin-top: 20px;
   &__content {
     width: 300px;
   }
   &__heart {
-    max-height: 400px;
+    margin-top: 20px;
+    max-width: 250px;
   }
   &__phase-item {
     margin-top: 20px;
