@@ -2,15 +2,16 @@
     +e('h1').title Фазы сердечного цикла
     .container
         +b.ecg
-            +e.range-wrapper
-                +e('input').range.js-ecg-range
+            +e('input').range.js-ecg-range
             +e.graph
+
                 include ../../images/svg/ecg-rheo.svg
         +b.table
             +b.phase
                 +e('h2').phase-title.js-phase-title Систола предсердий
                 +e.heart
                     include ../../images/svg/heart.svg
+                    +e.description.js-phase-description
 
 
 
